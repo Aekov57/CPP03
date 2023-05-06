@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 11:57:57 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/06 16:08:16 by misimon          ###   ########.fr       */
+/*   Created: 2023/05/06 16:12:23 by misimon           #+#    #+#             */
+/*   Updated: 2023/05/06 16:19:47 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 #include "ScavTrap.hpp"
 
-int main() {
-	ClapTrap a("Jean");
-	a.attack("Billy");
-	a.takeDamage(1);
-	a.beRepaired(20);
-	ScavTrap b("Luke");
-	b.attack("Gerard");
-	b.takeDamage(100);
-	ScavTrap c(b);
-	c.guardGate();
-	c.guardGate();
-	c.beRepaired(1);
-	a.attack("hello");
-	return 0;
-}
+class FragTrap : public ClapTrap
+{
+	private:
+	public:
+		FragTrap();
+		FragTrap(const std::string name);
+		FragTrap(const FrageTrap& other);
+		~FragTrap();
+};
+
+#endif

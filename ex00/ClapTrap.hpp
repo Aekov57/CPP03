@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:13:35 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/04 17:03:43 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/06 14:53:49 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(const std::string name);
+		ClapTrap(const ClapTrap& other);
 		~ClapTrap();
 		
 		void attack(const std::string& target);

@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:19:59 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/04 17:23:00 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/06 16:03:33 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 void ClapTrap::sendMessage(const std::string color, const std::string msg) {
 	std::cout << COLOR_YELLOW << "[ClapTrap]" << COLOR_RESET;
 	std::cout << color << " " + this->name << " " + msg << std::endl;
+}
+
+std::string ClapTrap::getName() {
+	return(this->name);
 }
 
 bool ClapTrap::checkStatus() {
@@ -28,12 +32,19 @@ bool ClapTrap::checkStatus() {
 	return(false);
 }
 
-ClapTrap::ClapTrap() : name("Jean Default"), hitPoint(10), energyPoint(10), attackDamage(0) {
+ClapTrap::ClapTrap() : name("Jean Default"), hitPoint(100), energyPoint(50), attackDamage(20) {
 	this->sendMessage(COLOR_CYAN, "created !");
 }
 	
-ClapTrap::ClapTrap(const std::string str) : name(str), hitPoint(10), energyPoint(10), attackDamage(0){
+ClapTrap::ClapTrap(const std::string str) : name(str), hitPoint(100), energyPoint(50), attackDamage(20){
 	this->sendMessage(COLOR_CYAN, "created !");
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other) {
+	this->name = other.name;
+	this->hitPoint = other.hitPoint;
+	this->attackDamage = other.energyPoint;
+	this->sendMessage(COLOR_CYAN, "copy !");
 }
 
 ClapTrap::~ClapTrap(){
@@ -43,9 +54,17 @@ ClapTrap::~ClapTrap(){
 void ClapTrap::attack(const std::string& target) {
 	if (this->checkStatus())
 	{
-		this->sendMessage(COLOR_GREEN, "attacks " + target + ", causing " + std::to_string(this->attackDamage) + " points of damage !");
+		this->sendMessage(COLOR_GREEN, "attacks " + target + ", causing " + this->getAttackDamage() + " points of damage !");
 		this->energyPoint--;
 	}
+}
+
+void ClapTrap::consumeEnergy() {
+	this->hitPoint -= 1;
+}
+
+std::string ClapTrap::getAttackDamage() {
+	return(std::to_string(this->attackDamage));
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
