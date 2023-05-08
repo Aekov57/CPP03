@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:19:59 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/06 14:51:28 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/08 17:18:31 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 void ClapTrap::sendMessage(const std::string color, const std::string msg) {
-	std::cout << COLOR_YELLOW << "[ClapTrap]" << COLOR_RESET;
+	std::cout << ClapTrapSTR;
 	std::cout << color << " " + this->name << " " + msg << std::endl;
 }
 
@@ -32,14 +32,25 @@ ClapTrap::ClapTrap() : name("Jean Default"), hitPoint(10), energyPoint(10), atta
 	this->sendMessage(COLOR_CYAN, "created !");
 }
 	
-ClapTrap::ClapTrap(const std::string str) : name(str), hitPoint(10), energyPoint(10), attackDamage(0){
+ClapTrap::ClapTrap(const std::string str) : name(str), hitPoint(10), energyPoint(10), attackDamage(0) {
 	this->sendMessage(COLOR_CYAN, "created !");
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
 	this->name = other.name;
 	this->hitPoint = other.hitPoint;
-	this->attackDamage = other.energyPoint;
+	this->attackDamage = other.attackDamage;
+	this->energyPoint = other.energyPoint;
+	this->sendMessage(COLOR_CYAN, "copy !");
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+	this->name = other.name;
+	this->hitPoint = other.hitPoint;
+	this->energyPoint = other.energyPoint;
+	this->attackDamage = other.attackDamage;
+	this->sendMessage(COLOR_CYAN, "copy with = operator is used !");
+	return *this;
 }
 
 ClapTrap::~ClapTrap(){

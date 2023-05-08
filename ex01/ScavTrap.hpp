@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:44:45 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/06 15:59:06 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/08 17:37:00 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class ScavTrap : public ClapTrap
 {
 	private :
-		void sendMessage(const std::string color, const std::string msg);
 		bool	gateMode;
 	public :
 		ScavTrap();
@@ -26,6 +25,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap(const ScavTrap& other);
 		~ScavTrap();
 
+		ScavTrap& operator=(const ScavTrap& other);
 		void attack(const std::string& target);
 		void guardGate();
 };

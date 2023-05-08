@@ -6,21 +6,22 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:57:57 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/06 15:54:27 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/08 17:33:37 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main() {
-	ClapTrap a("Jean");
-	a.attack("Billy");
-	a.takeDamage(1);
-	a.beRepaired(20);
-	a.attack("Hector");
-	ClapTrap b(a);
-	b.takeDamage(100);
-	a.attack("Hector");
-	b.attack("Hector");
-	return 0;
+	ClapTrap Steve("Steve");
+	ClapTrap evetS;
+
+	evetS = Steve;
+	evetS.attack("George");
+	Steve.takeDamage(9);
+	Steve.beRepaired(10);
+	Steve.takeDamage(11);
+	Steve.attack("TRUC");
+	
+	return EXIT_SUCCESS;
 }

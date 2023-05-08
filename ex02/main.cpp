@@ -6,24 +6,16 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:57:57 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/06 16:07:27 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/08 17:44:14 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-	ClapTrap a("Jean");
-	a.attack("Billy");
-	a.takeDamage(1);
-	a.beRepaired(20);
-	ScavTrap b("Luke");
-	b.attack("Gerard");
-	b.takeDamage(100);
-	ScavTrap c(b);
-	c.guardGate();
-	c.guardGate();
-	c.beRepaired(1);
-	a.attack("hello");
+	FragTrap e("Billy");
+	e.highFivesGuys();
+	e.takeDamage(100);
+	e.highFivesGuys();
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:13:35 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/06 14:53:49 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/08 15:13:09 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define COLOR_CYAN "\033[1;49;36m"
 # define COLOR_WHITE "\033[1;49;37m"
 
+# define ClapTrapSTR "\033[1;49;33m[ClapTrap]\033[0m"
 
 # include <string>
 # include <iostream>
@@ -43,6 +44,7 @@ class ClapTrap
 		ClapTrap(const ClapTrap& other);
 		~ClapTrap();
 		
+		ClapTrap& operator=(const ClapTrap& other);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
