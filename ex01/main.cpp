@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:57:57 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/08 17:38:50 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/09 11:07:54 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main() {
 	c = b;
 	c.guardGate();
 	c.guardGate();
+	c.takeDamage(100);
 	c.beRepaired(1);
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: misimon <misimon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:57:57 by misimon           #+#    #+#             */
-/*   Updated: 2023/05/08 17:33:37 by misimon          ###   ########.fr       */
+/*   Updated: 2023/05/09 11:05:01 by misimon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main() {
 
 	evetS = Steve;
 	evetS.attack("George");
-	Steve.takeDamage(9);
+	Steve.takeDamage(10);
 	Steve.beRepaired(10);
 	Steve.takeDamage(11);
 	Steve.attack("TRUC");
